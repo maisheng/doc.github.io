@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>嗖嗖行技术对接文档 | 嗖嗖行|智慧停车方案解决专家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="嗖嗖行技术对接文档历史版本    版本号 完成时间 拟稿/修订人 发布时间 变更说明     V1.0.0 2018-09-01 ywzou、sjchen 2018-10-08 文档创建   V1.0.1 2018-12-04 ywzou 2018-12-05 支付通知增加支付发起方式、停车场编号字段，入场、出场照片非必填    一、概述主要方便技术人员开发对接，实现停车费用的在线电子支付。通讯方">
+<meta name="keywords" content="嗖嗖行,技术对接文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嗖嗖行技术对接文档">
+<meta property="og:url" content="https://www.sousouxing.com/2018/12/07/doc-api/index.html">
+<meta property="og:site_name" content="嗖嗖行|智慧停车方案解决专家">
+<meta property="og:description" content="嗖嗖行技术对接文档历史版本    版本号 完成时间 拟稿/修订人 发布时间 变更说明     V1.0.0 2018-09-01 ywzou、sjchen 2018-10-08 文档创建   V1.0.1 2018-12-04 ywzou 2018-12-05 支付通知增加支付发起方式、停车场编号字段，入场、出场照片非必填    一、概述主要方便技术人员开发对接，实现停车费用的在线电子支付。通讯方">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-07T08:50:57.329Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="嗖嗖行技术对接文档">
+<meta name="twitter:description" content="嗖嗖行技术对接文档历史版本    版本号 完成时间 拟稿/修订人 发布时间 变更说明     V1.0.0 2018-09-01 ywzou、sjchen 2018-10-08 文档创建   V1.0.1 2018-12-04 ywzou 2018-12-05 支付通知增加支付发起方式、停车场编号字段，入场、出场照片非必填    一、概述主要方便技术人员开发对接，实现停车费用的在线电子支付。通讯方">
+  
+    <link rel="alternate" href="/atom.xml" title="嗖嗖行|智慧停车方案解决专家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">嗖嗖行|智慧停车方案解决专家</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">嗖嗖行智慧停车</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.sousouxing.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-doc-api" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/07/doc-api/" class="article-date">
+  <time datetime="2018-12-07T08:48:27.000Z" itemprop="datePublished">2018-12-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      嗖嗖行技术对接文档
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="嗖嗖行技术对接文档"><a href="#嗖嗖行技术对接文档" class="headerlink" title="嗖嗖行技术对接文档"></a>嗖嗖行技术对接文档</h1><p><strong>历史版本</strong></p>
+<table>
+<thead>
+<tr>
+<th>版本号</th>
+<th>完成时间</th>
+<th>拟稿/修订人</th>
+<th>发布时间</th>
+<th>变更说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1.0.0</td>
+<td>2018-09-01</td>
+<td>ywzou、sjchen</td>
+<td>2018-10-08</td>
+<td>文档创建</td>
+</tr>
+<tr>
+<td>V1.0.1</td>
+<td>2018-12-04</td>
+<td>ywzou</td>
+<td>2018-12-05</td>
+<td>支付通知增加支付发起方式、停车场编号字段，入场、出场照片非必填</td>
+</tr>
+</tbody>
+</table>
+<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>主要方便技术人员开发对接，实现停车费用的在线电子支付。通讯方式采用的物联协议MQTT,所以需要MQTT相关的依赖。</p>
+<blockquote>
+<p>文件目录说明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">├─MQTT                          //MQTT 动态库文件</span><br><span class="line">│  ├─x64</span><br><span class="line">│  └─x86</span><br><span class="line">├─SDK                           //SDK 动态链接库文件</span><br><span class="line">│  ├─include</span><br><span class="line">│  ├─x64</span><br><span class="line">│  │  ├─Debug</span><br><span class="line">│  │  └─Release</span><br><span class="line">│  └─x86</span><br><span class="line">│      ├─Debug</span><br><span class="line">│      └─Release</span><br><span class="line">├─SDK_EXAMPLES                  //测试程序源码</span><br><span class="line">├─可能依赖                      //测试程序执行程序可能的依赖库文件</span><br><span class="line">└─SDK_DEMO.zip                  //测试程序编译后的可执行程序</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="二、接口定义"><a href="#二、接口定义" class="headerlink" title="二、接口定义"></a>二、接口定义</h2><h3 id="2-1、数据请求"><a href="#2-1、数据请求" class="headerlink" title="2.1、数据请求"></a>2.1、数据请求</h3><h4 id="2-1-1、SDK初始化"><a href="#2-1-1、SDK初始化" class="headerlink" title="2.1.1、SDK初始化"></a>2.1.1、SDK初始化</h4><h5 id="2-1-1-1、简述"><a href="#2-1-1-1、简述" class="headerlink" title="2.1.1.1、简述"></a>2.1.1.1、简述</h5><pre><code>主要实现SDK的初始化，验证SDK，绑定初始化参数。
+</code></pre><h5 id="2-1-1-2、调用方法"><a href="#2-1-1-2、调用方法" class="headerlink" title="2.1.1.2、调用方法"></a>2.1.1.2、调用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssx_sdk::SSXSDK::init(<span class="keyword">const</span> <span class="built_in">string</span> manufacturer, <span class="keyword">const</span> <span class="built_in">string</span> parkCode, <span class="keyword">const</span> <span class="built_in">string</span> sysCode, <span class="keyword">const</span> stringchannelNumber, <span class="keyword">const</span> <span class="built_in">string</span> key, <span class="keyword">const</span> <span class="built_in">string</span> ssxUrl);</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-1-3、传入参数"><a href="#2-1-1-3、传入参数" class="headerlink" title="2.1.1.3、传入参数"></a>2.1.1.3、传入参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>manufacturer</td>
+<td>true</td>
+<td>string</td>
+<td>厂商编号，嗖嗖行提供</td>
+</tr>
+<tr>
+<td>parkCode</td>
+<td>true</td>
+<td>string</td>
+<td>车场编号，嗖嗖行提供</td>
+</tr>
+<tr>
+<td>sysCode</td>
+<td>true</td>
+<td>string</td>
+<td>计费系统编号</td>
+</tr>
+<tr>
+<td>key</td>
+<td>true</td>
+<td>string</td>
+<td>签名加密秘钥，嗖嗖行提供（一个车场一份）</td>
+</tr>
+<tr>
+<td>ssxUrl</td>
+<td>true</td>
+<td>string</td>
+<td>请求路径</td>
+</tr>
+<tr>
+<td>channelNumber</td>
+<td>true</td>
+<td>string</td>
+<td>通道编号</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-1-4、返回值"><a href="#2-1-1-4、返回值" class="headerlink" title="2.1.1.4、返回值"></a>2.1.1.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-1-5、示例"><a href="#2-1-1-5、示例" class="headerlink" title="2.1.1.5、示例"></a>2.1.1.5、示例</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> manufacturer = <span class="string">"201808290001"</span>;</span><br><span class="line">    <span class="built_in">string</span> parkCode = <span class="string">"201808150001"</span>;</span><br><span class="line">    <span class="built_in">string</span> sysCode = <span class="string">"0001"</span>;</span><br><span class="line">    <span class="built_in">string</span> channelNumber = <span class="string">"A4"</span>;</span><br><span class="line">    <span class="built_in">string</span> key = <span class="string">"201822134513165313"</span>;</span><br><span class="line">    <span class="built_in">string</span> ssxUrl = <span class="string">"http://192.168.1.2:8080"</span>;</span><br><span class="line">    <span class="built_in">string</span> res = SSXSDK::init(manufacturer, parkCode, sysCode, key,channelNumber , ssxUrl);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"init() responseData -&gt;  "</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”初始化成功!”}</p>
+</blockquote>
+<h4 id="2-1-2、车辆入场"><a href="#2-1-2、车辆入场" class="headerlink" title="2.1.2、车辆入场"></a>2.1.2、车辆入场</h4><h5 id="2-1-2-1、简述"><a href="#2-1-2-1、简述" class="headerlink" title="2.1.2.1、简述"></a>2.1.2.1、简述</h5><pre><code>要实现车辆进入停车场时，停车场计费系统推送订单，记录车子入场时间、车牌号、入场照片等关键信息
+</code></pre><h5 id="2-1-2-2、调用方法"><a href="#2-1-2-2、调用方法" class="headerlink" title="2.1.2.2、调用方法"></a>2.1.2.2、调用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssx_sdk::SSXSDK::entry(conststring carNumber, <span class="keyword">const</span> <span class="built_in">string</span> inTime, <span class="keyword">const</span> <span class="built_in">string</span> orderId, <span class="keyword">const</span> stringfilePath,<span class="keyword">const</span> <span class="keyword">int</span> inType,<span class="keyword">const</span> <span class="built_in">string</span> scanNumber);</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-2-3、传入参数"><a href="#2-1-2-3、传入参数" class="headerlink" title="2.1.2.3、传入参数"></a>2.1.2.3、传入参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>入场车牌号</td>
+</tr>
+<tr>
+<td>inTime</td>
+<td>true</td>
+<td>string</td>
+<td>入场时间</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号（停车场计费系统唯一单号，不可重复）</td>
+</tr>
+<tr>
+<td>filePath</td>
+<td>false</td>
+<td>stirng</td>
+<td>入场照片路径（不可包含中文路径）v1.0.1 update false</td>
+</tr>
+<tr>
+<td>entryType</td>
+<td>true</td>
+<td>stirng</td>
+<td>入场类型（2:扫码 1:智能识别）默认：1</td>
+</tr>
+<tr>
+<td>scanNumber</td>
+<td>false</td>
+<td>stirng</td>
+<td>扫描序号 当entryType为2时必传</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-2-4、返回值"><a href="#2-1-2-4、返回值" class="headerlink" title="2.1.2.4、返回值"></a>2.1.2.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-2-5、示例"><a href="#2-1-2-5、示例" class="headerlink" title="2.1.2.5、示例"></a>2.1.2.5、示例</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> filePath = <span class="string">"E:\\images\\4.jpg"</span>;</span><br><span class="line">    <span class="built_in">string</span> carNumber = <span class="string">"陕A12345"</span>;</span><br><span class="line">    <span class="built_in">string</span> inTime= <span class="string">"20180907142001"</span>;</span><br><span class="line">    <span class="built_in">string</span> orderId = <span class="string">"20180907000001"</span>;</span><br><span class="line">    <span class="keyword">int</span> entryType= <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">string</span> scanNumber= <span class="string">""</span>;</span><br><span class="line">    <span class="built_in">string</span> res;</span><br><span class="line">    res =SSXSDK::entry( carNumber, inTime, orderId, filePath,entryType,scanNumber);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt; <span class="string">"entry() responseData -&gt;"</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”订单创建成功!”}</p>
+</blockquote>
+<h4 id="2-1-3、车辆出场缴费"><a href="#2-1-3、车辆出场缴费" class="headerlink" title="2.1.3、车辆出场缴费"></a>2.1.3、车辆出场缴费</h4><h5 id="2-1-3-1、简述"><a href="#2-1-3-1、简述" class="headerlink" title="2.1.3.1、简述"></a>2.1.3.1、简述</h5><pre><code>主要实现车辆出场时缴纳停车费用
+</code></pre><h5 id="2-1-3-2、调用方法"><a href="#2-1-3-2、调用方法" class="headerlink" title="2.1.3.2、调用方法"></a>2.1.3.2、调用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssx_sdk::SSXSDK::leave(conststring carNumber, <span class="keyword">const</span> <span class="built_in">string</span> outTime, <span class="keyword">const</span> <span class="built_in">string</span> orderId, <span class="keyword">const</span> longduration, <span class="keyword">const</span> <span class="keyword">int</span> orderAmount, <span class="keyword">const</span> <span class="built_in">string</span> filePath,<span class="keyword">const</span> <span class="keyword">int</span> outType, conststring scanNumber);</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-3-3、传入参数"><a href="#2-1-3-3、传入参数" class="headerlink" title="2.1.3.3、传入参数"></a>2.1.3.3、传入参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>出场车牌号</td>
+</tr>
+<tr>
+<td>outTime</td>
+<td>true</td>
+<td>string</td>
+<td>出场时间</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号（不能重复，用于对账）</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>true</td>
+<td>long</td>
+<td>停车时长(单位：分钟)</td>
+</tr>
+<tr>
+<td>orderAmount</td>
+<td>true</td>
+<td>int</td>
+<td>停车费用(单位：分)</td>
+</tr>
+<tr>
+<td>filePath</td>
+<td>false</td>
+<td>stirng</td>
+<td>出场照片路径（不能包含中文路径）v1.0.1 update false</td>
+</tr>
+<tr>
+<td>outType</td>
+<td>true</td>
+<td>stirng</td>
+<td>出场类型（2:扫码 1:智能识别）默认:1</td>
+</tr>
+<tr>
+<td>scanNumber</td>
+<td>false</td>
+<td>stirng</td>
+<td>扫描序号扫描序号 当entryType为2时必传</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-3-4、返回值"><a href="#2-1-3-4、返回值" class="headerlink" title="2.1.3.4、返回值"></a>2.1.3.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-3-5、示例"><a href="#2-1-3-5、示例" class="headerlink" title="2.1.3.5、示例"></a>2.1.3.5、示例</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> filePath = <span class="string">"E:\\images\\5.jpg"</span>;</span><br><span class="line">    <span class="built_in">string</span> carNumber = <span class="string">"陕A12345"</span>;</span><br><span class="line">    <span class="built_in">string</span> outTime = <span class="string">"20180907152000"</span>;</span><br><span class="line">    <span class="built_in">string</span> orderId = <span class="string">"20180907000001"</span>;</span><br><span class="line">    <span class="keyword">long</span> duration= <span class="number">3600</span>;<span class="comment">//单位:分钟</span></span><br><span class="line">    <span class="keyword">int</span> orderAmount = <span class="number">300</span>;<span class="comment">//单位:分</span></span><br><span class="line">    <span class="keyword">int</span> outType =<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">string</span> scanNumber= <span class="string">""</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">string</span> res;</span><br><span class="line">    res =SSXSDK::leave(carNumber, outTime, orderId, duration, orderAmount，filePath,outType,scanNumber );</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt; <span class="string">"leave() responseData -&gt;"</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{“code”:”0001”,”msg”:”支付成功!”}</p>
+</blockquote>
+<h4 id="2-1-4、车辆离场"><a href="#2-1-4、车辆离场" class="headerlink" title="2.1.4、车辆离场"></a>2.1.4、车辆离场</h4><h5 id="2-1-4-1、简述"><a href="#2-1-4-1、简述" class="headerlink" title="2.1.4.1、简述"></a>2.1.4.1、简述</h5><pre><code>车辆离开停车场以后给搜搜行云平台推动离场确认数据，完善订单信息，标识订单真正的结束
+</code></pre><h5 id="2-1-4-2、调用方法"><a href="#2-1-4-2、调用方法" class="headerlink" title="2.1.4.2、调用方法"></a>2.1.4.2、调用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssx_sdk::SSXSDK::finish(<span class="keyword">const</span> <span class="built_in">string</span> orderId, <span class="keyword">const</span> <span class="built_in">string</span> carNumber, <span class="keyword">const</span> <span class="built_in">string</span> finishTime);</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-4-3、传入参数"><a href="#2-1-4-3、传入参数" class="headerlink" title="2.1.4.3、传入参数"></a>2.1.4.3、传入参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>车牌号</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号</td>
+</tr>
+<tr>
+<td>finishTime</td>
+<td>true</td>
+<td>string</td>
+<td>订单完成时间（格式必须为yyyyMMddHHmmss）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-4-4、返回值"><a href="#2-1-4-4、返回值" class="headerlink" title="2.1.4.4、返回值"></a>2.1.4.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-4-5、示例"><a href="#2-1-4-5、示例" class="headerlink" title="2.1.4.5、示例"></a>2.1.4.5、示例</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> carNumber = <span class="string">"陕A888888"</span>;</span><br><span class="line">    <span class="built_in">string</span> finishTime = <span class="string">"20180904133533"</span>;</span><br><span class="line">    <span class="built_in">string</span> orderId = <span class="string">"20180907000001"</span>;</span><br><span class="line"> </span><br><span class="line">    res =SSXSDK::finish(orderId, carNumber, finishTime);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt;<span class="string">"finish() responseData -&gt;"</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”处理成功!”}</p>
+</blockquote>
+<h4 id="2-1-5、订单查询"><a href="#2-1-5、订单查询" class="headerlink" title="2.1.5、订单查询"></a>2.1.5、订单查询</h4><h5 id="2-1-5-1、简述"><a href="#2-1-5-1、简述" class="headerlink" title="2.1.5.1、简述"></a>2.1.5.1、简述</h5><pre><code>主要实现查询订单信息
+</code></pre><h5 id="2-1-5-2、调用方法"><a href="#2-1-5-2、调用方法" class="headerlink" title="2.1.5.2、调用方法"></a>2.1.5.2、调用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssx_sdk::SSXSDK::queryOrder(<span class="keyword">const</span> <span class="built_in">string</span> orderId);</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-5-3、传入参数"><a href="#2-1-5-3、传入参数" class="headerlink" title="2.1.5.3、传入参数"></a>2.1.5.3、传入参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-5-4、返回值"><a href="#2-1-5-4、返回值" class="headerlink" title="2.1.5.4、返回值"></a>2.1.5.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+<tr>
+<td>data</td>
+<td>string</td>
+<td>订单数据（json格式）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-5-5、示例"><a href="#2-1-5-5、示例" class="headerlink" title="2.1.5.5、示例"></a>2.1.5.5、示例</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> orderId = <span class="string">"20180904000001"</span>;</span><br><span class="line">    res =SSXSDK::queryOrder(orderId);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt;<span class="string">"finish() responseData -&gt;"</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”订单信息查询成功!”,data:….}</p>
+</blockquote>
+<h4 id="2-1-6、补缴订单"><a href="#2-1-6、补缴订单" class="headerlink" title="2.1.6、补缴订单"></a>2.1.6、补缴订单</h4><h5 id="2-1-6-1、简述"><a href="#2-1-6-1、简述" class="headerlink" title="2.1.6.1、简述"></a>2.1.6.1、简述</h5><pre><code>补缴订单数据的推送，并发起缴费
+</code></pre><h5 id="2-1-6-2、调用方法"><a href="#2-1-6-2、调用方法" class="headerlink" title="2.1.6.2、调用方法"></a>2.1.6.2、调用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssx_sdk::SSXSDK::suppOrder(<span class="keyword">const</span> <span class="built_in">string</span> carNumber, conststring startTime, <span class="keyword">const</span> <span class="built_in">string</span> endTime, <span class="keyword">const</span> <span class="built_in">string</span> orderId, <span class="keyword">const</span> longduration, <span class="keyword">const</span> <span class="keyword">int</span> orderAmount);</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-6-3、传入参数"><a href="#2-1-6-3、传入参数" class="headerlink" title="2.1.6.3、传入参数"></a>2.1.6.3、传入参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>补缴车牌号</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>true</td>
+<td>string</td>
+<td>补缴计费开始时间 格式yyyyMMddHHmmss</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>true</td>
+<td>string</td>
+<td>补缴计费结束时间 格式yyyyMMddHHmmss</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>补缴订单流水号（停车场计费系统唯一单号，不可重复）</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>true</td>
+<td>long</td>
+<td>补缴订单计费时长（单位：分钟）</td>
+</tr>
+<tr>
+<td>orderAmount</td>
+<td>true</td>
+<td>int</td>
+<td>补缴订单计费金额（单位：分）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-6-4、返回值"><a href="#2-1-6-4、返回值" class="headerlink" title="2.1.6.4、返回值"></a>2.1.6.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-6-示例"><a href="#2-1-6-示例" class="headerlink" title="2.1.6.示例"></a>2.1.6.示例</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> carNumber = <span class="string">"陕A888888"</span>;</span><br><span class="line">    <span class="built_in">string</span> startTime=<span class="string">"20180904133533"</span>;</span><br><span class="line">    <span class="built_in">string</span> endTime=<span class="string">"20180904143533"</span>;</span><br><span class="line">    <span class="built_in">string</span> orderId = <span class="string">"20180907000001"</span>;</span><br><span class="line">    <span class="keyword">long</span> duration= <span class="number">60</span>;</span><br><span class="line">    <span class="keyword">int</span> orderAmount= <span class="number">300</span>;</span><br><span class="line">    <span class="built_in">string</span> res;</span><br><span class="line">    res =SSXSDK::suppOrder(carNumber, startTime,endTime, orderId, duration, orderAmount);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt; <span class="string">" suppOrder () responseData -&gt;"</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”补缴成功!”}</p>
+</blockquote>
+<h4 id="2-1-7、免费车辆推送"><a href="#2-1-7、免费车辆推送" class="headerlink" title="2.1.7、免费车辆推送"></a>2.1.7、免费车辆推送</h4><h5 id="2-1-7-1、简述"><a href="#2-1-7-1、简述" class="headerlink" title="2.1.7.1、简述"></a>2.1.7.1、简述</h5><p>接收车场的免费车辆数据（可适用于包月的车），只做记录，实际付费以推送的订单为准，以车牌号码和结束时间作为唯一的标识，做添加修改操作，同一车场同一车牌号反复推送，若上一次结束时间大于等于系统时间上一次则做修改（有效免费数据），若上次推送的结束时间小于系统时间则作添加操作（失效过期）。</p>
+<h5 id="2-1-7-2、调用方法"><a href="#2-1-7-2、调用方法" class="headerlink" title="2.1.7.2、调用方法"></a>2.1.7.2、调用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssx_sdk::SSXSDK::freeCar (<span class="keyword">const</span> <span class="built_in">string</span> carNumber,conststring startTime,<span class="keyword">const</span> <span class="built_in">string</span> endTime,<span class="keyword">const</span> <span class="built_in">string</span> remarks, <span class="keyword">const</span> <span class="keyword">int</span> delFlag);</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-7-3、传入参数"><a href="#2-1-7-3、传入参数" class="headerlink" title="2.1.7.3、传入参数"></a>2.1.7.3、传入参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>免费车牌号</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>true</td>
+<td>string</td>
+<td>开始时间 格式yyyyMMddHHmmss</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>true</td>
+<td>string</td>
+<td>结束时间 格式yyyyMMddHHmms</td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>false</td>
+<td>string</td>
+<td>备注，不可超过200字</td>
+</tr>
+<tr>
+<td>delFlag</td>
+<td>false</td>
+<td>long</td>
+<td>删除标识(0:false 1:true) 默认0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-7-4、返回值"><a href="#2-1-7-4、返回值" class="headerlink" title="2.1.7.4、返回值"></a>2.1.7.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-1-7-示例"><a href="#2-1-7-示例" class="headerlink" title="2.1.7.示例"></a>2.1.7.示例</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> namespacestd;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> carNumber = <span class="string">"陕A888888"</span>;</span><br><span class="line">    <span class="built_in">string</span> startTime=<span class="string">"20180904133533"</span>;</span><br><span class="line">    <span class="built_in">string</span> endTime=<span class="string">"20181003143533"</span>;</span><br><span class="line">    <span class="built_in">string</span> remarks =<span class="string">"包月车"</span>;</span><br><span class="line">    <span class="keyword">int</span> delFlag=<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">string</span> res =SSXSDK::freeCar(carNumber, startTime, endTime, remarks, delFlag);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt;<span class="string">" freeCar() responseData -&gt;"</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”推送成功!”}</p>
+</blockquote>
+<h3 id="2-2、数据通知"><a href="#2-2、数据通知" class="headerlink" title="2.2、数据通知"></a>2.2、数据通知</h3><p>SDK通知计费系统相应的操作指令。停车场计费系统更具指令类型完成相应的业务处理。实现接收通知有两个方案（详见<code>附录:通知实现方式</code>）：<br>①、实现通知指令接口的相关业务方法<br>②、编写回调函数，根据通知的指令自行实现相关的业务</p>
+<h4 id="2-2-1、预支付（订单查询）"><a href="#2-2-1、预支付（订单查询）" class="headerlink" title="2.2.1、预支付（订单查询）"></a>2.2.1、预支付（订单查询）</h4><h5 id="2-2-1-1、简述"><a href="#2-2-1-1、简述" class="headerlink" title="2.2.1.1、简述"></a>2.2.1.1、简述</h5><p>主要实现车辆未出场，车主发起提前缴费，嗖嗖行云平台将发送查询指令到SDK，SDK接收到指令以后，将相应的订单数据推送到嗖嗖行平台，用户提前支付停车费，支付成功后在规定的优惠时间内驶出停车场。</p>
+<h5 id="2-2-1-2、调用方法"><a href="#2-2-1-2、调用方法" class="headerlink" title="2.2.1.2、调用方法"></a>2.2.1.2、调用方法</h5><p>需要车场的计费系统实现接口<code>CommandInterface</code>中的<code>queryOrder(string parkCode,string orderId,string carNumber)</code>方法，SDK接收到查询指令后会自动调用该方法，并传入车辆入场时的唯一流水号和车牌号码，计费系统可根据流水号和车牌号码查询出订单信息然后推送（调用方法：<code>SSXSDK::pushOrder(_orderId,_carNumber, inTime,inChannel, outTime, outChannel, duration,orderAmount)</code>）到嗖嗖行平台</p>
+<h5 id="2-2-1-3、传入参数"><a href="#2-2-1-3、传入参数" class="headerlink" title="2.2.1.3、传入参数"></a>2.2.1.3、传入参数</h5><ul>
+<li>SDK回调传参 （<code>回调方法queryOrder(...)</code>）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号</td>
+</tr>
+<tr>
+<td>parkCode</td>
+<td>true</td>
+<td>string</td>
+<td>停车场编号 v1.0.1 add</td>
+</tr>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>车牌号</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>订单数据推送请求参数（<code>调用方法pushOrder(...)</code>）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号</td>
+</tr>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>车牌号</td>
+</tr>
+<tr>
+<td>inTime</td>
+<td>true</td>
+<td>string</td>
+<td>入场时间（格式：yyyyMMddHHmmss）</td>
+</tr>
+<tr>
+<td>inChannel</td>
+<td>true</td>
+<td>string</td>
+<td>入场通道</td>
+</tr>
+<tr>
+<td>outTime</td>
+<td>true</td>
+<td>string</td>
+<td>离场时间（格式：yyyyMMddHHmmss）</td>
+</tr>
+<tr>
+<td>outChannel</td>
+<td>true</td>
+<td>string</td>
+<td>离场通道</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>true</td>
+<td>string</td>
+<td>停车时长（单位：分）</td>
+</tr>
+<tr>
+<td>orderAmount</td>
+<td>true</td>
+<td>string</td>
+<td>停车费用（单位：分）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-1-4、数据推送返回值"><a href="#2-2-1-4、数据推送返回值" class="headerlink" title="2.2.1.4、数据推送返回值"></a>2.2.1.4、数据推送返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码 0000:成功 其他表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-1-5、示例"><a href="#2-2-1-5、示例" class="headerlink" title="2.2.1.5、示例"></a>2.2.1.5、示例</h5><blockquote>
+<p>callbackimpl.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"CommandInterface.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> CALLBACKIMPL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALLBACKIMPL_H</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CallBackImpl</span>:</span><span class="keyword">public</span> CommandInterface&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CallBackImpl()&#123;&#125;</span><br><span class="line">    <span class="comment">//预支付场景 获取订单数据</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">queryOrder</span><span class="params">(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> orderId, <span class="built_in">string</span> carNumber)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//其他实现项</span></span><br><span class="line">    <span class="comment">//...... </span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// CALLBACKIMPL_H</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>callbackimpl.cpp<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"callbackimpl.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CallBackImpl::queryOrder(<span class="built_in">string</span> parkCode, <span class="built_in">string</span> orderId, <span class="built_in">string</span> carNumber) &#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implqueryOrder() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> _orderId=orderId;</span><br><span class="line">    <span class="keyword">const</span> string_parkCode=<span class="string">"201808150001"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> _carNumber=carNumber;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> inTime=<span class="string">"20180831123056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> inChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> outTime=<span class="string">"20180831133056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> outChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">long</span> duration=<span class="number">3600</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> orderAmount=<span class="number">300</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackImpl --&gt;_carNumber() --&gt;"</span> &lt;&lt; _carNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">string</span> responseData =SSXSDK::pushOrder(_orderId, _carNumber, inTime,inChannel, outTime,outChannel, duration,orderAmount);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackImpl --&gt;queryOrder() --&gt;"</span> &lt;&lt; responseData &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”获取成功!”}</p>
+</blockquote>
+<h4 id="2-2-2、扫码入场"><a href="#2-2-2、扫码入场" class="headerlink" title="2.2.2、扫码入场"></a>2.2.2、扫码入场</h4><h5 id="2-2-2-1、简述"><a href="#2-2-2-1、简述" class="headerlink" title="2.2.2.1、简述"></a>2.2.2.1、简述</h5><p>用户在不使用嗖嗖行小程序的情况下，车辆在入场时扫描入场二维码进行入场。针对无牌车辆停车场景。</p>
+<h5 id="2-2-2-2、调用方法"><a href="#2-2-2-2、调用方法" class="headerlink" title="2.2.2.2、调用方法"></a>2.2.2.2、调用方法</h5><p>需要车场的计费系统实现接口<code>CommandInterface</code>中的<code>scanQrEntry(string parkCode,stringsysCode,string channel,string carNumber,int tempCar)</code>方法,SDK接收到指令会调用该方法，车场自行判断入口是否有车辆等待入场、放行入场、推送入场数据（调用2.1.2）。</p>
+<h5 id="2-2-2-3、传入参数"><a href="#2-2-2-3、传入参数" class="headerlink" title="2.2.2.3、传入参数"></a>2.2.2.3、传入参数</h5><blockquote>
+<p>SDK回调传参</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parkCode</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号，嗖嗖行提供</td>
+</tr>
+<tr>
+<td>sysCode</td>
+<td>true</td>
+<td>string</td>
+<td>计费系统编号</td>
+</tr>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>车牌号</td>
+</tr>
+<tr>
+<td>tempCar</td>
+<td>true</td>
+<td>string</td>
+<td>是否是临时车牌 1是 0不是</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-2-4、示例"><a href="#2-2-2-4、示例" class="headerlink" title="2.2.2.4、示例"></a>2.2.2.4、示例</h5><blockquote>
+<p>callbackimpl.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"CommandInterface.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> CALLBACKIMPL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALLBACKIMPL_H</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CallBackImpl</span>:</span><span class="keyword">public</span> CommandInterface&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CallBackImpl()&#123;&#125;;</span><br><span class="line">    <span class="comment">//扫码入场</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">scanQrEntry</span><span class="params">(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> carNumber)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//其他实现项</span></span><br><span class="line">    <span class="comment">//.......</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// CALLBACKIMPL_H</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>callbackimpl.cpp<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"callbackimpl.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line">voidCallBackImpl::scanQrEntry(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> carNumber)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; parkCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; sysCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; channel &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; carNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">//车场自行判断数据入口是否有车辆等待入场 放行入场推送（调用2.1.2）入场数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”获取成功!”}</p>
+</blockquote>
+<h4 id="2-2-3、扫码支付"><a href="#2-2-3、扫码支付" class="headerlink" title="2.2.3、扫码支付"></a>2.2.3、扫码支付</h4><h5 id="2-2-3-1、简述"><a href="#2-2-3-1、简述" class="headerlink" title="2.2.3.1、简述"></a>2.2.3.1、简述</h5><p>主要用于扫描二维码支付的场景，用户扫描二维码时嗖嗖行云平台发送指令到SDK,SDK回调方法推送正在出场闸口的唯一一个车辆的订单数据。</p>
+<h5 id="2-2-3-2、调用方法"><a href="#2-2-3-2、调用方法" class="headerlink" title="2.2.3.2、调用方法"></a>2.2.3.2、调用方法</h5><p>需要车场的计费系统实现接口<code>CommandInterface中的scanQrCodePay (string parkCode,string sysCode,string channel,string scanNumber,string orderId,string carNumber,int tempCar)</code>方法，在方法中实现计费系统推送（<code>SSXSDK::scanningOrder(scanNumber,orderId,carNumber,inTime ,inChannel,outTime,outChannel,duration,orderAmount)</code>）在当前闸口的唯一的数据到嗖嗖行平台，注意判断车牌是否一致，临牌除外。支付订单以支付系统推送的数据为准。</p>
+<h5 id="2-2-3-3、传入参数"><a href="#2-2-3-3、传入参数" class="headerlink" title="2.2.3.3、传入参数"></a>2.2.3.3、传入参数</h5><blockquote>
+<p>SDK回调方法</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parkCode</td>
+<td>true</td>
+<td>string</td>
+<td>车场编号</td>
+</tr>
+<tr>
+<td>sysCode</td>
+<td>true</td>
+<td>string</td>
+<td>计费系统编号</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>true</td>
+<td>string</td>
+<td>扫码通道</td>
+</tr>
+<tr>
+<td>scanNumber</td>
+<td>true</td>
+<td>string</td>
+<td>扫码流水号</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号</td>
+</tr>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>车牌号</td>
+</tr>
+<tr>
+<td>tempCar</td>
+<td>true</td>
+<td>int</td>
+<td>是否是临时车（1:是 0:否）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>推送数据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>流水号</td>
+</tr>
+<tr>
+<td>scanNumber</td>
+<td>true</td>
+<td>string</td>
+<td>扫描流水号，由嗖嗖行提供</td>
+</tr>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>车牌号</td>
+</tr>
+<tr>
+<td>inTime</td>
+<td>true</td>
+<td>string</td>
+<td>入场时间（格式：yyyyMMddHHmmss）</td>
+</tr>
+<tr>
+<td>inChannel</td>
+<td>true</td>
+<td>string</td>
+<td>入场通道</td>
+</tr>
+<tr>
+<td>outTime</td>
+<td>true</td>
+<td>string</td>
+<td>离场时间（格式：yyyyMMddHHmmss）</td>
+</tr>
+<tr>
+<td>outChannel</td>
+<td>true</td>
+<td>string</td>
+<td>离场通道</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>true</td>
+<td>string</td>
+<td>停车时长（单位：分钟）</td>
+</tr>
+<tr>
+<td>orderAmount</td>
+<td>true</td>
+<td>string</td>
+<td>停车费用（单位：分）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-3-4、返回值"><a href="#2-2-3-4、返回值" class="headerlink" title="2.2.3.4、返回值"></a>2.2.3.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-3-5、示例"><a href="#2-2-3-5、示例" class="headerlink" title="2.2.3.5、示例"></a>2.2.3.5、示例</h5><blockquote>
+<p>callbackimpl.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"CommandInterface.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> CALLBACKIMPL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALLBACKIMPL_H</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CallBackImpl</span>:</span><span class="keyword">public</span> CommandInterface&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CallBackImpl()&#123;&#125;</span><br><span class="line">    <span class="comment">//扫码支付获取最新要出场且在出场闸口的车辆订单数据</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">scanQrCodePay</span><span class="params">(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> scanNumber,<span class="built_in">string</span> orderId,<span class="built_in">string</span> carNumber,<span class="keyword">int</span> tempCar)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//其他实现项</span></span><br><span class="line">    <span class="comment">//......</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// CALLBACKIMPL_H</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>callbackimpl.cpp<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"callbackimpl.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">void</span> CallBackImpl::scanQrCodePay(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> scanNumber,<span class="built_in">string</span> orderId,<span class="built_in">string</span> carNumber,<span class="keyword">int</span> tempCar)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface impl scanQrCodePay() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">//获取出口要出场的唯一一个车场的订单数据</span></span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> orderId=<span class="string">"201809140002"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> carNumber=<span class="string">"A888888"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> inTime=<span class="string">"20180831123056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> inChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> outTime=<span class="string">"20180831133056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> outChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">long</span> duration=<span class="number">3600</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> orderAmount=<span class="number">300</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">string</span> responseData = SSXSDK::scanningOrder(scanNumber,orderId,carNumber,inTime ,inChannel,outTime,outChannel,duration,orderAmount);</span><br><span class="line"></span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackImpl --&gt; scanQrCodePay() --&gt;"</span> &lt;&lt; responseData &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">｝</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出结果：{“code”:”0000”,”msg”:”推送成功!”}</p>
+</blockquote>
+<h4 id="2-2-4、支付结果通知"><a href="#2-2-4、支付结果通知" class="headerlink" title="2.2.4、支付结果通知"></a>2.2.4、支付结果通知</h4><h5 id="2-2-4-1、简述"><a href="#2-2-4-1、简述" class="headerlink" title="2.2.4.1、简述"></a>2.2.4.1、简述</h5><p>主要用于支付结果的通知，仅在支付成功的时候调用</p>
+<h5 id="2-2-4-2、调用方法"><a href="#2-2-4-2、调用方法" class="headerlink" title="2.2.4.2、调用方法"></a>2.2.4.2、调用方法</h5><p>需要车场的计费系统实现接口<code>CommandInterface中的noticeOfPaymentResult (string orderId, string carNumber,int payStatus,int orderAmount,int duration,string inTime,string outTime,string payTime,int payMethod,string parkCode)</code>方法，计费系统自行决定自己的业务处理</p>
+<h5 id="2-2-4-3、传入参数"><a href="#2-2-4-3、传入参数" class="headerlink" title="2.2.4.3、传入参数"></a>2.2.4.3、传入参数</h5><blockquote>
+<p>回调方法传入参数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderId</td>
+<td>true</td>
+<td>string</td>
+<td>车场流水号</td>
+</tr>
+<tr>
+<td>parkCode</td>
+<td>true</td>
+<td>string</td>
+<td>车场编号 v1.0.1 add</td>
+</tr>
+<tr>
+<td>carNumber</td>
+<td>true</td>
+<td>string</td>
+<td>车牌号</td>
+</tr>
+<tr>
+<td>payStatus</td>
+<td>true</td>
+<td>int</td>
+<td>支付状态 0:失败 1:成功</td>
+</tr>
+<tr>
+<td>payMethod</td>
+<td>true</td>
+<td>int</td>
+<td>付款发起方式 1扫码 2预支付 3现金 4其他 v1.0.1add</td>
+</tr>
+<tr>
+<td>orderAmount</td>
+<td>true</td>
+<td>int</td>
+<td>支付金额</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>true</td>
+<td>int</td>
+<td>停车时长</td>
+</tr>
+<tr>
+<td>inTime</td>
+<td>true</td>
+<td>string</td>
+<td>入场时间</td>
+</tr>
+<tr>
+<td>outTime</td>
+<td>true</td>
+<td>string</td>
+<td>出场时间</td>
+</tr>
+<tr>
+<td>payTime</td>
+<td>true</td>
+<td>string</td>
+<td>支付时间</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-4-4、返回值"><a href="#2-2-4-4、返回值" class="headerlink" title="2.2.4.4、返回值"></a>2.2.4.4、返回值</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>返回码</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>返回信息描述</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-4-5、示例"><a href="#2-2-4-5、示例" class="headerlink" title="2.2.4.5、示例"></a>2.2.4.5、示例</h5><blockquote>
+<p>callbackimpl.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"CommandInterface.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> CALLBACKIMPL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALLBACKIMPL_H</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CallBackImpl</span>:</span><span class="keyword">public</span> CommandInterface&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CallBackImpl()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//支付结果通知</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">noticeOfPaymentResult</span><span class="params">(<span class="built_in">string</span> orderId, <span class="built_in">string</span> carNumber,<span class="keyword">int</span> payStatus,<span class="keyword">int</span> orderAmount,<span class="keyword">int</span> duration,<span class="built_in">string</span> inTime,<span class="built_in">string</span> outTime,<span class="built_in">string</span> payTime)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//其他实现项</span></span><br><span class="line">    <span class="comment">//.......</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// CALLBACKIMPL_H</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>callbackimpl.cpp<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"callbackimpl.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CallBackImpl::noticeOfPaymentResult(stringorderId, <span class="built_in">string</span> carNumber,<span class="keyword">int</span> payStatus,<span class="keyword">int</span> orderAmount,<span class="keyword">int</span> duration,stringinTime,<span class="built_in">string</span> outTime,<span class="built_in">string</span> payTime)&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; <span class="string">"client interface impl noticeOfPaymentResult() "</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">if</span>(payStatus == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt; <span class="string">"client interface impl noticeOfPaymentResult() pay error!"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt; <span class="string">"client interface impl noticeOfPaymentResult() paysuccess!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="附录一-通知实现方式"><a href="#附录一-通知实现方式" class="headerlink" title="附录一:通知实现方式"></a>附录一:通知实现方式</h2><h3 id="1、接口方式"><a href="#1、接口方式" class="headerlink" title="1、接口方式"></a>1、接口方式</h3><h4 id="1-1、头文件"><a href="#1-1、头文件" class="headerlink" title="1.1、头文件"></a>1.1、头文件</h4><blockquote>
+<p>callbackimpl.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"CommandInterface.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> namespacessx_sdk;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> CALLBACKIMPL_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALLBACKIMPL_H</span></span><br><span class="line"> </span><br><span class="line">classCallBackImpl:<span class="keyword">public</span> CommandInterface</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CallBackImpl() &#123;&#125;</span><br><span class="line">    <span class="comment">//预支付场景 获取订单数据</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">queryOrder</span><span class="params">(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> orderId,<span class="built_in">string</span> carNumber)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//扫码支付获取最新要出场且在出场闸口的车辆订单数据</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">scanQrCodePay</span><span class="params">(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> scanNumber,<span class="built_in">string</span> orderId,<span class="built_in">string</span> carNumber,<span class="keyword">int</span> tempCar)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//扫码入场</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">scanQrEntry</span><span class="params">(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> carNumber)</span></span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//支付结果通知</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">noticeOfPaymentResult</span><span class="params">(<span class="built_in">string</span> orderId, <span class="built_in">string</span> carNumber,<span class="keyword">int</span> payStatus,<span class="keyword">int</span> orderAmount,<span class="keyword">int</span> duration,<span class="built_in">string</span> inTime,<span class="built_in">string</span> outTime,<span class="built_in">string</span> payTime ,<span class="keyword">int</span> payMethod,<span class="built_in">string</span> parkCode)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// CALLBACKIMPL_H</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="1-1、源文件"><a href="#1-1、源文件" class="headerlink" title="1.1、源文件"></a>1.1、源文件</h4><blockquote>
+<p>callbackimpl.cpp</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"callbackimpl.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CallBackImpl::queryOrder(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> orderId, <span class="built_in">string</span> carNumber) &#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implqueryOrder() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> _orderId=orderId;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> _parkCode= parkCode;</span><br><span class="line">    <span class="keyword">const</span> string_carNumber=carNumber;<span class="comment">//carNumber</span></span><br><span class="line">    <span class="keyword">const</span> stringinTime=<span class="string">"20180831123056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> inChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> stringoutTime=<span class="string">"20180831133056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> outChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">long</span> duration=<span class="number">3600</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> orderAmount=<span class="number">300</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackImpl --&gt;_carNumber() --&gt;"</span> &lt;&lt; _carNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">string</span> responseData = <span class="string">""</span>;</span><br><span class="line">    responseData =SSXSDK::pushOrder(_orderId, _carNumber, inTime,inChannel, outTime,outChannel, duration,orderAmount);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackImpl --&gt;queryOrder() --&gt;"</span> &lt;&lt; responseData &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CallBackImpl::scanQrCodePay(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> scanNumber,<span class="built_in">string</span> orderId,<span class="built_in">string</span> carNumber,<span class="keyword">int</span> tempCar)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrCodePay() parkCode:"</span>&lt;&lt; parkCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrCodePay() sysCode:"</span>&lt;&lt; sysCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrCodePay() channel:"</span>&lt;&lt; channel  &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrCodePay() scanNumber:"</span>&lt;&lt; scanNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrCodePay() tempCar:"</span>&lt;&lt; tempCar &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">//获取出口要出场的唯一一个车场的订单数据</span></span><br><span class="line">    <span class="comment">//const string orderId="201809140002";</span></span><br><span class="line">    <span class="comment">//const string carNumber="A888888";</span></span><br><span class="line">    <span class="keyword">const</span> stringinTime=<span class="string">"20180831123056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> inChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> stringoutTime=<span class="string">"20180831133056"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> outChannel=<span class="string">"0001"</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">long</span> duration=<span class="number">3600</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> orderAmount=<span class="number">300</span>;</span><br><span class="line">    <span class="built_in">string</span> responseData=<span class="string">""</span>;</span><br><span class="line">    responseData =SSXSDK::scanningOrder(scanNumber,orderId,carNumber,inTime,inChannel,outTime,outChannel,duration,orderAmount);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackImpl --&gt;scanQrCodePay() --&gt;"</span> &lt;&lt; responseData &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CallBackImpl::scanQrEntry(<span class="built_in">string</span> parkCode,<span class="built_in">string</span> sysCode,<span class="built_in">string</span> channel,<span class="built_in">string</span> carNumber)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; parkCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; sysCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; channel &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implscanQrEntry()--&gt; "</span> &lt;&lt; carNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//车场自行判断数据入口是否有车辆等待入场 放行入场推送 入场数据</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">void</span> CallBackImpl::noticeOfPaymentResult(<span class="built_in">string</span> orderId, <span class="built_in">string</span> carNumber,<span class="keyword">int</span> payStatus,<span class="keyword">int</span> orderAmount,<span class="keyword">int</span> duration,<span class="built_in">string</span> inTime,<span class="built_in">string</span> outTime,<span class="built_in">string</span> payTime ,<span class="keyword">int</span> payMethod,<span class="built_in">string</span>    parkCode)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface implnoticeOfPaymentResult() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">if</span>(payStatus == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interfaceimpl noticeOfPaymentResult() pay error!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interfaceimpl noticeOfPaymentResult() pay success!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3、设置方法"><a href="#1-3、设置方法" class="headerlink" title="1.3、设置方法"></a>1.3、设置方法</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CallBackImpl *cmd = <span class="keyword">new</span> CallBackImpl();</span><br><span class="line">SSXSDK::setCommandInterface(cmd);</span><br></pre></td></tr></table></figure>
+<h3 id="2、回调函数方式"><a href="#2、回调函数方式" class="headerlink" title="2、回调函数方式"></a>2、回调函数方式</h3><h4 id="2-1、头文件"><a href="#2-1、头文件" class="headerlink" title="2.1、头文件"></a>2.1、头文件</h4><blockquote>
+<p>callbackservice.h</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> CALLBACKSERVICE_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CALLBACKSERVICE_H</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CallBackService</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CallBackService();</span><br><span class="line">    ~CallBackService();</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @briefhandleNotice</span></span><br><span class="line"><span class="comment">     * @paramstrJsonData</span></span><br><span class="line"><span class="comment">     * 处理通知相关的方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">handleNotice</span><span class="params">(constchar * strJsonData)</span></span>;</span><br><span class="line"> </span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// CALLBACKSERVICE_H</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2、源文件"><a href="#2-2、源文件" class="headerlink" title="2.2、源文件"></a>2.2、源文件</h4><blockquote>
+<p>callbackservice.cpp</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"callbackservice.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"SSX_SDK.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QJsonDocument&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QJsonObject&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QJsonParseError&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QVariantMap&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> ssx_sdk;</span><br><span class="line"></span><br><span class="line">CallBackService::CallBackService()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CallBackService::~CallBackService()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">charLength</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(str[len])&#123;</span><br><span class="line">        len = len + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CallBackService::handleNotice(<span class="keyword">const</span> <span class="keyword">char</span>* strJsonData)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackService--&gt;handleNotice()"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackService--&gt;handleNotice() param "</span>&lt;&lt; strJsonData &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackService--&gt;handleNotice() charLength "</span>&lt;&lt; charLength(strJsonData) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">int</span> valuesize = charLength(strJsonData);</span><br><span class="line">    QByteArray jsonData = QByteArray(strJsonData,valuesize);</span><br><span class="line">    <span class="function">QString <span class="title">simpjson_str</span><span class="params">(jsonData)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">string</span> cstr = <span class="built_in">string</span>(jsonData);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">" request data:  "</span>&lt;&lt; cstr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">//    char *qc  = new char[1024];</span></span><br><span class="line">    <span class="comment">//    strcpy(qc,strJsonData);</span></span><br><span class="line">    <span class="comment">//    QString qStr = QString(QLatin1String(qc));</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//    QByteArray cdata = qStr.toLatin1();</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//解析json数据</span></span><br><span class="line">    QJsonParseError error;</span><br><span class="line">    QJsonDocument document = QJsonDocument::fromJson(simpjson_str.toUtf8(), &amp;error);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(QJsonParseError::NoError == error.error)</span><br><span class="line">    &#123;   <span class="comment">//map</span></span><br><span class="line">        QVariantMap <span class="built_in">map</span> = document.toVariant().toMap();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> command = <span class="built_in">map</span>[<span class="string">"command"</span>].toString().toStdString();</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackService--&gt;handleNotice() command : "</span>&lt;&lt; command &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">if</span> (command.size() &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">strcmp</span>(<span class="string">""</span>, command.c_str()) != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">string</span> responseStr=<span class="string">"is empty!"</span>;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">"prePay"</span>, command.c_str()) == <span class="number">0</span>) &#123;<span class="comment">//查询订单(预支付场景)</span></span><br><span class="line"></span><br><span class="line">                <span class="built_in">string</span> orderId = <span class="built_in">map</span>[<span class="string">"orderId"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> carNumber = <span class="built_in">map</span>[<span class="string">"carNumber"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> parkCode = <span class="built_in">map</span>[<span class="string">"parkCode"</span>].toString().toStdString();</span><br><span class="line"></span><br><span class="line">                QString str = <span class="built_in">map</span>[<span class="string">"carNumber"</span>].toString();</span><br><span class="line">                QByteArray cdata = str.toLocal8Bit();</span><br><span class="line">                carNumber = <span class="built_in">string</span>(cdata);</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"carNumber : "</span> &lt;&lt; carNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="comment">//根据orderId和carNumber查询出相应的订单数据</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> inTime=<span class="string">"20180831123056"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> inChannel=<span class="string">"0001"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> outTime=<span class="string">"20180831133056"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> outChannel=<span class="string">"A4"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="keyword">long</span> duration=<span class="number">3600</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="keyword">int</span> orderAmount=<span class="number">300</span>;</span><br><span class="line"></span><br><span class="line">                responseStr = SSXSDK::pushOrder(orderId, carNumber, inTime,inChannel, outTime, outChannel, duration,orderAmount);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">"qrCodePay"</span>, command.c_str()) == <span class="number">0</span>) &#123;<span class="comment">//扫描二维码支付  出场扫码支付</span></span><br><span class="line">                <span class="built_in">string</span> parkCode = <span class="built_in">map</span>[<span class="string">"parkCode"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> sysCode = <span class="built_in">map</span>[<span class="string">"sysCode"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> channel = <span class="built_in">map</span>[<span class="string">"channel"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> scanNumber = <span class="built_in">map</span>[<span class="string">"scanNumber"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> orderId = <span class="built_in">map</span>[<span class="string">"orderId"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> carNumber = <span class="built_in">map</span>[<span class="string">"carNumber"</span>].toString().toStdString();</span><br><span class="line">                <span class="keyword">int</span> tempCar = <span class="built_in">map</span>[<span class="string">"tempCar"</span>].toInt();<span class="comment">//是否是临时车牌 1true 0false</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> inTime=<span class="string">"20180831123056"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> inChannel=<span class="string">"0001"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> outTime=<span class="string">"20180831133056"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="built_in">string</span> outChannel=<span class="string">"A4"</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="keyword">long</span> duration=<span class="number">3600</span>;</span><br><span class="line">                <span class="keyword">const</span> <span class="keyword">int</span> orderAmount=<span class="number">300</span>;</span><br><span class="line"></span><br><span class="line">                responseStr = SSXSDK::scanningOrder(scanNumber,orderId,carNumber,inTime ,inChannel,outTime,outChannel,duration,orderAmount);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">"qrCodeEntry"</span>, command.c_str()) == <span class="number">0</span>) &#123;<span class="comment">//扫码入场通知</span></span><br><span class="line">                <span class="built_in">string</span> parkCode = <span class="built_in">map</span>[<span class="string">"parkCode"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> sysCode = <span class="built_in">map</span>[<span class="string">"sysCode"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> channel = <span class="built_in">map</span>[<span class="string">"channel"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> carNumber = <span class="built_in">map</span>[<span class="string">"carNumber"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> scanNumber = <span class="built_in">map</span>[<span class="string">"scanNumber"</span>].toString().toStdString();</span><br><span class="line"></span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface impl scanQrEntry() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"client callFunction qrCodeEntry parkCode --&gt; "</span> &lt;&lt; parkCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"client callFunction qrCodeEntry sysCode --&gt; "</span> &lt;&lt; sysCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"client callFunction qrCodeEntry channel --&gt; "</span> &lt;&lt; channel &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"client callFunction qrCodeEntry carNumber --&gt; "</span> &lt;&lt; carNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"client callFunction qrCodeEntry scanNumber --&gt; "</span> &lt;&lt; scanNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">"payNotice"</span>, command.c_str()) == <span class="number">0</span>)</span><br><span class="line">            &#123;<span class="comment">//支付通知</span></span><br><span class="line">                <span class="built_in">string</span> orderId = <span class="built_in">map</span>[<span class="string">"orderId"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> carNumber = <span class="built_in">map</span>[<span class="string">"carNumber"</span>].toString().toStdString();</span><br><span class="line">                <span class="keyword">int</span> payStatus = <span class="built_in">map</span>[<span class="string">"payStatus"</span>].toInt();</span><br><span class="line">                <span class="keyword">int</span> payAmount = <span class="built_in">map</span>[<span class="string">"payAmount"</span>].toInt();</span><br><span class="line">                <span class="keyword">int</span> duration = <span class="built_in">map</span>[<span class="string">"duration"</span>].toInt();</span><br><span class="line">                <span class="built_in">string</span> inTime = <span class="built_in">map</span>[<span class="string">"inTime"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> outTime = <span class="built_in">map</span>[<span class="string">"outTime"</span>].toString().toStdString();</span><br><span class="line">                <span class="built_in">string</span> payTime = <span class="built_in">map</span>[<span class="string">"payTime"</span>].toString().toStdString();</span><br><span class="line">                <span class="keyword">int</span> payMethod = <span class="built_in">map</span>[<span class="string">"payMethod"</span>].toInt();</span><br><span class="line">                <span class="built_in">string</span> parkCode = <span class="built_in">map</span>[<span class="string">"parkCode"</span>].toString().toStdString();</span><br><span class="line"></span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice orderId "</span> &lt;&lt; orderId &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice carNumber "</span> &lt;&lt; carNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice payStatus "</span> &lt;&lt; payStatus &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice payAmount "</span> &lt;&lt; payAmount &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice duration "</span> &lt;&lt; duration &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice inTime "</span> &lt;&lt; inTime &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice outTime "</span> &lt;&lt; outTime &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice payTime "</span> &lt;&lt; payTime &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice payMethod "</span> &lt;&lt; payMethod &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"payNotice parkCode "</span> &lt;&lt; parkCode &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface impl noticeOfPaymentResult() "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="keyword">if</span>(payStatus == <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface impl noticeOfPaymentResult() pay error!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; <span class="string">"client interface impl noticeOfPaymentResult() pay success!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">" CallBackService handleNotice () Unknown command !"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackService --&gt; handleNotice() responseData --&gt;"</span> &lt;&lt; responseStr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackService--&gt;handleNotice() command is null "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"CallBackService--&gt;handleNotice() Parsing error!!!! "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3、设置方法"><a href="#2-3、设置方法" class="headerlink" title="2.3、设置方法"></a>2.3、设置方法</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> MainWindow::noticeCallBack(<span class="keyword">const</span> <span class="keyword">char</span>* strJsonData)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"callback function :"</span> &lt;&lt; strJsonData &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    CallBackService::handleNotice(strJsonData);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SSXSDK::setCallBackFun((CallBackFun)noticeCallBack);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.sousouxing.com/2018/12/07/doc-api/" data-id="cjpdsli6b0001cshjkkr8whyw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嗖嗖行-技术对接文档/">嗖嗖行,技术对接文档</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/07/嗖嗖行技术对接文档/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          嗖嗖行技术对接文档
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/嗖嗖行-技术对接文档/">嗖嗖行,技术对接文档</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/嗖嗖行-技术对接文档/" style="font-size: 10px;">嗖嗖行,技术对接文档</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/07/嗖嗖行技术对接文档/">嗖嗖行技术对接文档</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/07/doc-api/">嗖嗖行技术对接文档</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 嗖嗖行<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
